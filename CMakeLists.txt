@@ -178,7 +178,7 @@ else()
     # Fully offline build: both valkey-server (if needed) and
     # valkeymodule.h are provided by the user, so we don't clone the
     # Valkey repo at all. Provide a placeholder utility target named
-    # "valkey" so existing dependants (add_dependencies / POST_BUILD
+    # "valkey" so existing dependents (add_dependencies / POST_BUILD
     # custom_command) keep working unchanged.
     add_custom_target(valkey
         COMMAND ${CMAKE_COMMAND} -E echo "Offline build: skipping Valkey clone/build"
