@@ -165,7 +165,7 @@ TEST_F(HashTableTest, CopyMembers) {
         EXPECT_EQ(s.handles, sz);
         {
             rapidjson::hashTableStats.reset();
-            JValue v2(v, allocator);  // Invokes copymembers
+            JValue v2(v, allocator);  // Invokes CopyMembers
             EXPECT_EQ(v2.Validate(), "");
             EXPECT_EQ(v2.MemberCount(), sz);
             EXPECT_EQ(rapidjson::hashTableStats.rehashUp, 0);
