@@ -3331,10 +3331,10 @@ class TestJsonBasic(JsonTestCase):
         client = self.server.get_new_client()
         # This test is to test memory leak
 
-        for fle in glob.glob("data/*.json"):
-            with open(fle, 'r') as file:
+        for filename in glob.glob("data/*.json"):
+            with open(filename, 'r') as file:
                 self.data = file.read()
-            logging.debug("File %s is size %d" % (fle, len(self.data)))
+            logging.debug("File %s is size %d" % (filename, len(self.data)))
             b0 = client.info(JSON_INFO_METRICS_SECTION)[
                 JSON_INFO_NAMES['total_memory_bytes']]
             try:
