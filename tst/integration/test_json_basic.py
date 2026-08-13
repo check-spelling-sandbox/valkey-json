@@ -344,7 +344,7 @@ class TestJsonBasic(JsonTestCase):
                 'JSON.GET', wikipedia, '.foo')
         assert self.error_class.is_nonexistent_error(str(e.value))
 
-        # Option NX means setting the value only if the JSON path does not exists, a.k.a, inserting the value.
+        # Option NX means setting the value only if the JSON path does not exist, a.k.a, inserting the value.
         # According to API, if the value exists, the command should return null instead of error.
         assert None == client.execute_command(
             'JSON.SET', wikipedia, '.', '"some new value"', 'NX')
